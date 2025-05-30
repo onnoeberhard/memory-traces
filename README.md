@@ -1,4 +1,4 @@
-# Memory traces for Reinforcement Learning
+# Memory Traces for Reinforcement Learning
 This is the official repository to the paper "Partially Observable Reinforcement Learning with Memory Traces" by Onno Eberhard, Michael Muehlebach, and Claire Vernade (published at ICML 2025).
 All algorithms discussed in the paper are included here.
 
