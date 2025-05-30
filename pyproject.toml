@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "traces"
+version = "0.1.0"
+description = ""
+authors = ["Onno Eberhard <onnoeberhard@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+jax = "*"
+numpy = "*"
+wandb = "*"
+xminigrid = "*"
+oetils = "*"
+distrax = "*"
+equinox = "*"
+optax = "*"
+einops = "*"
+flax = "*"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
