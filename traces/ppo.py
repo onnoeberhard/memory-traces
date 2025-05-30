@@ -254,10 +254,10 @@ def ppo(env, env_params, agent, mem, total_steps, n_envs, n_steps, lr, gam, gae_
 
     def monitor(i, rets, tot_rews, lens, dones, metrics):
         pbar.write(f"Steps: {(i + 1) * n_envs * n_steps:{int(np.log10(total_steps)) + 1}d}. "
-            f"mean return: {metrics['mean_return']:8.6f}, "
+            # f"mean return: {metrics['mean_return']:8.6f}, "
             f"mean total reward: {metrics['mean_tot_rew']:8.6f}, "
-            f"mean episode length: {metrics['mean_ep_len']:8.3f}, "
-            f"mean approximate KL divergence: {metrics['approx_kl']:8.6f}")
+            f"mean episode length: {metrics['mean_ep_len']:8.3f}")
+            # f"mean approximate KL divergence: {metrics['approx_kl']:8.6f}")
         sys.stdout.flush()
         if wblog_all:  # only makes sense with n_monitor == n_updates
             idx = jnp.where(dones)
@@ -307,6 +307,7 @@ def ppo(env, env_params, agent, mem, total_steps, n_envs, n_steps, lr, gam, gae_
         'total_loss', 'policy_loss', 'value_loss', 'approx_kl', 'entropy', 'clipfrac']}
     _, params, metrics, *_ = jax.lax.fori_loop(0, n_updates, update,
         (rng, params, metrics, opt_state, timestep, action, memory, ret, tot_rew, time))
+    sys.stdout.flush()
     return params, metrics
 
 

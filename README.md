@@ -14,7 +14,7 @@ python examples/ppo_tmaze.py
 ```
 This script trains a Proximal Policy Optimization (PPO) agent in a T-Maze environment with corridor length 64. The training takes about 5 minutes on a standard laptop. Weights and Biases logging can be enabled in the configuration dictionary in the example script.
 
-With `memory='trace'`, the agent achieves a success rate of about 70% after 10 million steps, while `memory='window'` fails to learn anything.
+With `memory='trace'`, the agent achieves a success rate of about 80% after 10 million steps, while `memory='window'` fails to learn anything. (Subject to stochasticity, results may vary!)
 
 ## Citation
 If you use this code in your research, please cite our paper:
