@@ -253,11 +253,11 @@ def ppo(env, env_params, agent, mem, total_steps, n_envs, n_steps, lr, gam, gae_
         return (ret, tot_rew, time), (y, y_, l)
 
     def monitor(i, rets, tot_rews, lens, dones, metrics):
-        pbar.write(f'Steps: {(i + 1) * n_envs * n_steps:{int(np.log10(total_steps)) + 1}d}. '
-            f'Mean return: {metrics['mean_return']:8.6f}, '
-            f'Mean total reward: {metrics['mean_tot_rew']:8.6f}, '
-            f'mean episode length: {metrics['mean_ep_len']:8.3f}, '
-            f'mean approximate KL divergence: {metrics['approx_kl']:8.6f}')
+        pbar.write(f"Steps: {(i + 1) * n_envs * n_steps:{int(np.log10(total_steps)) + 1}d}. "
+            f"mean return: {metrics['mean_return']:8.6f}, "
+            f"mean total reward: {metrics['mean_tot_rew']:8.6f}, "
+            f"mean episode length: {metrics['mean_ep_len']:8.3f}, "
+            f"mean approximate KL divergence: {metrics['approx_kl']:8.6f}")
         sys.stdout.flush()
         if wblog_all:  # only makes sense with n_monitor == n_updates
             idx = jnp.where(dones)
