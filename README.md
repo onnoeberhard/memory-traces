@@ -26,6 +26,7 @@ If you use this code in your research, please cite our paper:
   year = {2025},
   series = {Proceedings of Machine Learning Research},
   volume = {267},
+  pages = {14934--14949},
   url = {https://arxiv.org/abs/2503.15200}
 }
 ```
